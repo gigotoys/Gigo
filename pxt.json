@@ -1,5 +1,5 @@
 {
-    "name": "Gigoblock",
+    "name": "GigoBlockly",
     "version": "0.0.0",
     "description": "智高方塊",
     "dependencies": {
@@ -10,9 +10,9 @@
     "files": [
         "README.md",
         "main.ts",
-        "_locales/zh-tw/Gigoblock-strings.json",
-        "_locales/zh-cn/Gigoblock-strings.json",
-        "_locales/le/Gigoblock-strings.json"
+        "_locales/zh-tw/GigoBlockly-strings.json",
+        "_locales/zh-cn/GigoBlockly-strings.json",
+        "_locales/le/GigoBlockly-strings.json"
     ],
     "testFiles": [
         

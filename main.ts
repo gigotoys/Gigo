@@ -1,5 +1,5 @@
 // 在這裡添加你的程式
-//% weight=0 color=#3CB371 icon="\uf2db" block="Gigo sensor" groups='["Motor", "超音波", "顏色感測", "Receive"]'
+//% weight=0 color=#3CB371 icon="\uf2db" block="GigoBlockly" groups='["Motor", "超音波", "顏色感測", "Receive"]'
 enum PingUnit {
     //% block="μs"
     MicroSeconds,
@@ -18,7 +18,7 @@ enum MotorChannel {
     //% block="D"
     MotorD = 4
 }
-namespace Gigoblock {
+namespace GigoBlockly {
     /**馬達通道定義註解
    A(0,14)
    B(1,2)
@@ -92,10 +92,9 @@ namespace Gigoblock {
     //% McontrolPin.fieldEditor="gridpicker" McontrolPin.fieldOptions.columns=4
     //% McontrolPin.fieldOptions.tooltips="false" McontrolPin.fieldOptions.width="300"
     //% group="Motor"
-    export function DDMmotor(MSpeedPin: AnalogPin, MSpeedValue: number, McontrolPin: AnalogPin, McontrolValue: number): void {
-        pins.analogWritePin(MSpeedPin, pins.map(MSpeedValue, 0, 255, 0, 1023));
-        pins.analogWritePin(McontrolPin, pins.map(McontrolValue, 0, 1, 0, 1023));
-
+    export function DDMmotor(McontrolPin: DigitalPin,McontrolValue: number,MSpeedPin: AnalogPin,MSpeedValue: number): void {
+        pins.digitalWritePin(McontrolPin, pins.map(McontrolValue, 0, 1, 0, 1));
+        pins.analogWritePin(MSpeedPin, pins.map(MSpeedValue, 0, 255, 0, 1023));	   
     }
     //% weight=12
     //% block="Color Sensor init"
