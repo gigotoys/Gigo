@@ -1,5 +1,5 @@
 // 在這裡添加你的程式
-//% weight=0 color=#3CB371 icon="\uf2db" block="Gigosensor" groups='["Motor", "超音波", "顏色感測", "Receive"]'
+//% weight=0 color=#3CB371 icon="\uf2db" block="GigoBlockly" groups='["Motor", "超音波", "顏色感測", "Receive"]'
 enum PingUnit {
     //% block="μs"
     MicroSeconds,
@@ -18,7 +18,7 @@ enum MotorChannel {
     //% block="D"
     MotorD = 4
 }
-namespace GigoBlockly {
+namespace gigoblockly {
     /**馬達通道定義註解
    A(0,14)
    B(1,2)
