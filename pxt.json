@@ -1,11 +1,9 @@
 {
     "name": "GigoBlockly",
     "version": "0.0.0",
-    "description": "智高方塊",
+    "description": "智高提供的積木方塊。Blocks provided by Gigo。",
     "dependencies": {
         "core": "*",
-        "radio": "*",
-        "microphone": "*"
     },
     "files": [
         "README.md",
@@ -14,13 +12,7 @@
         "_locales/zh-cn/GigoBlockly-strings.json",
         "_locales/le/GigoBlockly-strings.json"
     ],
-    "testFiles": [
-        
-    ],
+
     "public": true,
-    "supportedTargets": [
-        "microbit"
-    ],
-    "preferredEditor": "blocksprj",
     "license": "MIT"
 }
