@@ -18,7 +18,7 @@ enum MotorChannel {
     //% block="D"
     MotorD = 4
 }
-namespace Gigotools {
+namespace Gigoblock {
     /**馬達通道定義註解
    A(0,14)
    B(1,2)

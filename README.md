@@ -32,6 +32,6 @@ This image may take a few minutes to refresh.
 
 ```package
 
-tools = github: gigoyoys/gigosensor
+Gigoblock = github: gigoyoys/Gigo
 
 ```
