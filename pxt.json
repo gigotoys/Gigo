@@ -1,18 +1,19 @@
 {
-    "name": "Gigo Blockly",
-    "version": "0.0.0",
+    "name": "GigoBlockly",
+    "version": "0.0.2",
     "description": "智高提供的積木方塊。Blocks provided by Gigo。",
+    "license": "MIT",
     "dependencies": {
-        "core": "*",
+        "core": "*"
     },
     "files": [
         "README.md",
         "main.ts",
-        "_locales/zh-tw/GigoBlockly-strings.json",
         "_locales/zh-cn/GigoBlockly-strings.json",
-        "_locales/le/GigoBlockly-strings.json"
+        "_locales/zh-tw/GigoBlockly-strings.json",
+        "_locales/el/GigoBlockly-strings.json"
+       
+      
     ],
-
-    "public": true,
-    "license": "MIT"
+    "public": true
 }
