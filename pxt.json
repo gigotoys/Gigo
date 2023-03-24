@@ -10,9 +10,9 @@
     "files": [
         "README.md",
         "main.ts",
-        "_locales/zh-tw/sensors-strings.json",
-        "_locales/zh-cn/sensors-strings.json",
-        "_locales/le/sensors-strings.json"
+        "_locales/zh-tw/Gigoblock-strings.json",
+        "_locales/zh-cn/Gigoblock-strings.json",
+        "_locales/le/Gigoblock-strings.json"
     ],
     "testFiles": [
         
