@@ -1,5 +1,5 @@
 // 在這裡添加你的程式
-//% weight=0 color=#3CB371 icon="\uf2db" block="GigoBlockly" groups='["Motor", "超音波", "顏色感測", "Receive"]'
+//% weight=0 color=#3CB371 icon="\uf2db" block="Gigo Blockly" groups='["Motor", "超音波", "顏色感測", "Receive"]'
 enum PingUnit {
     //% block="μs"
     MicroSeconds,
