@@ -1,0 +1,26 @@
+{
+    "name": "Gigoblock",
+    "version": "0.0.0",
+    "description": "智高方塊",
+    "dependencies": {
+        "core": "*",
+        "radio": "*",
+        "microphone": "*"
+    },
+    "files": [
+        "README.md",
+        "main.ts",
+        "_locales/zh-tw/sensors-strings.json",
+        "_locales/zh-cn/sensors-strings.json",
+        "_locales/le/sensors-strings.json"
+    ],
+    "testFiles": [
+        
+    ],
+    "public": true,
+    "supportedTargets": [
+        "microbit"
+    ],
+    "preferredEditor": "blocksprj",
+    "license": "MIT"
+}

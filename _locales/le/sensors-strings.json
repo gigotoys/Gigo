@@ -1,0 +1,5 @@
+{
+    "sensors|block": "εργαλείο",
+    "sensors.DDMmotor|block": "Επιλογή πινέλων ελέγχου %McontrolPin| Έλεγχος κατεύθυνσης κινητήρα 0-1 %McontrolValue|επιλογή καρφίτσας ταχύτητας %MSpeedPin|Επιλεγμένη τιμή ταχύτητας 0~255 %MSpeedValue"
+
+}
