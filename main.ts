@@ -12,8 +12,6 @@ export function ColorSensorinit(): void {
  */
 //% weight=12
 //% block="white balance compensation"
-//% subcategory="Add on pack" 
-//% group="Color Sensor"
 
 export function WhiteBalanceCompensation(): number[] {
     let compensationValues: number[] | null = null;
