@@ -1,3 +1,5 @@
+//% weight=0 color=#3CB371 icon="\uf2db" block="gigotools" groups='["Motor", "Ultrasound", "RGB LED", "Color Sensor"]'
+namespace Gigotools {
 //% weight=12
 //% block="initialize color sensor"
 //% subcategory="Add on pack" 
@@ -46,4 +48,5 @@ export function WhiteBalanceCompensation(): number[] {
 
     // 返回補償數值
     return compensationValues;
+}
 }
