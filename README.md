@@ -14,5 +14,5 @@ Blocks provided by Gigo。
 (The metadata above is needed for package search.)
 
 ```package
-gigoblockly=github:gigotoys/Gigo
+Gigo=github:gigotoys/Gigo
 ```
