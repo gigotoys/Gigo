@@ -69,21 +69,31 @@ namespace ColorSensor {
     }
 
     //% block="initialize color sensor"
-    export function begin(): boolean {
-        if (!detect()) return false
+    //% block="initialize color sensor"
+export function begin(): boolean {
+    if (!detect()) return false
 
-        if (colorIC == ColorIC.TCS3472) {
-            writeReg(cmd(0x00), 0x01) // PON
-            basic.pause(3)
-            writeReg(cmd(0x00), 0x03) // AEN
-            writeReg(cmd(0x0F), 0x02) // AGAIN 16x
-        } else {
-            writeReg(0x80, 0x03) // PON + RGB_EN
-            basic.pause(20)
-            writeReg(0x81, 0b00000100) // AGAIN=1x, RGB=100ms
-        }
-        return true
+    if (colorIC == ColorIC.TCS3472) {
+
+        writeReg(cmd(0x00), 0x01) // PON
+        basic.pause(3)
+        writeReg(cmd(0x00), 0x03) // AEN
+        writeReg(cmd(0x0F), 0x02) // AGAIN 16x
+
+    } else {
+        // ⭐ 正確版本 ⭐
+        // PON + RGB_EN + W_EN
+        writeReg(0x80, 0x07)
+
+        // AGAIN=1x, RGB_TIME=100ms
+        writeReg(0x81, 0b00000100)
+
+        // 等 ADC 真正完成
+        basic.pause(120)
     }
+    return true
+}
+
 
     //% block="red value"
     export function red(): number {
