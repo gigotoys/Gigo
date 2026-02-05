@@ -1,18 +1,17 @@
-# GigoBlockly
+# Color Sensor Auto Detect
 
-智高提供的積木方塊。
-Blocks provided by Gigo。
+Supports:
+- TCS3472
+- BL-MZ-PBS06212D-010X
 
-## License
+## Features
+- Auto detect sensor type
+- Same Blocks API
+- No user code change when switching sensor
 
-* MIT
+## Usage
+1. Call **initialize color sensor**
+2. Read RGB value
 
-
-## Supported targets
-
-* for microbit
-(The metadata above is needed for package search.)
-
-```package
-Gigo=github:gigotoys/Gigo
-```
+## Supported Boards
+- BBC micro:bit V1 / V2
