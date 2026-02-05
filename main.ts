@@ -1,37 +1,94 @@
-/**
- * Dual Color Sensor Extension
- * Support: TCS3472 / BL-MZ-PBS06212D-010X
- */
-
-enum ColorIC {
-    NONE,
-    TCS3472,
-    BL_MZ
-}
-
-let colorIC: ColorIC = ColorIC.NONE
-let i2cAddr = 0x00
-
-//% color="#FF8800" icon="\uf53f" block="Color Sensor"
 namespace ColorSensor {
 
-    // ===== Low level I2C =====
-    function writeReg(reg: number, val: number) {
-        let buf = pins.createBuffer(2)
-        buf[0] = reg
-        buf[1] = val
-        pins.i2cWriteBuffer(i2cAddr, buf)
+    enum SensorType {
+        Unknown = 0,
+        TCS3472 = 1,
+        BLMZ = 2
     }
 
-    function readReg(reg: number): number {
-        pins.i2cWriteNumber(i2cAddr, reg, NumberFormat.UInt8BE)
-        return pins.i2cReadNumber(i2cAddr, NumberFormat.UInt8BE)
+    let sensorType: SensorType = SensorType.Unknown
+
+    const TCS_ADDR = 0x29
+    const BLMZ_ADDR = 0x43
+
+    //% block="initialize color sensor (auto detect)"
+    //% subcategory="Add on pack"
+    //% group="Color Sensor"
+    export function init(): void {
+        // Try TCS3472
+        try {
+            pins.i2cWriteNumber(TCS_ADDR, 0x12, NumberFormat.UInt8BE, true)
+            let id = pins.i2cReadNumber(TCS_ADDR, NumberFormat.UInt8BE, false)
+            if (id == 0x44) {
+                sensorType = SensorType.TCS3472
+                initTCS()
+                return
+            }
+        } catch { }
+
+        // Try BL-MZ
+        try {
+            pins.i2cWriteNumber(BLMZ_ADDR, 0x82, NumberFormat.UInt8BE, true)
+            let id = pins.i2cReadNumber(BLMZ_ADDR, NumberFormat.UInt8BE, false)
+            if (id == 0x24) {
+                sensorType = SensorType.BLMZ
+                initBLMZ()
+                return
+            }
+        } catch { }
+
+        sensorType = SensorType.Unknown
     }
 
-    function cmd(reg: number): number {
-        return (colorIC == ColorIC.TCS3472) ? (0x80 | reg) : reg
+    function initTCS(): void {
+        pins.i2cWriteNumber(TCS_ADDR, 0x8003, NumberFormat.UInt16BE)
+        pins.i2cWriteNumber(TCS_ADDR, 0x8100, NumberFormat.UInt16BE)
     }
 
-    function read16(lo: number): number {
-        let l = readReg(cmd(lo))
-        let h = readReg(cm
+    function initBLMZ(): void {
+        pins.i2cWriteNumber(BLMZ_ADDR, 0x8003, NumberFormat.UInt16BE)
+        pins.i2cWriteNumber(BLMZ_ADDR, 0x8144, NumberFormat.UInt16BE)
+    }
+
+    function read16(addr: number, reg: number): number {
+        pins.i2cWriteNumber(addr, reg, NumberFormat.UInt8BE, true)
+        return pins.i2cReadNumber(addr, NumberFormat.UInt16LE, false)
+    }
+
+    function readRedRaw(): number {
+        return sensorType == SensorType.TCS3472
+            ? read16(TCS_ADDR, 0x96)
+            : read16(BLMZ_ADDR, 0xA0)
+    }
+
+    function readGreenRaw(): number {
+        return sensorType == SensorType.TCS3472
+            ? read16(TCS_ADDR, 0x98)
+            : read16(BLMZ_ADDR, 0xA2)
+    }
+
+    function readBlueRaw(): number {
+        return sensorType == SensorType.TCS3472
+            ? read16(TCS_ADDR, 0x9A)
+            : read16(BLMZ_ADDR, 0xA4)
+    }
+
+    //% block="read color %channel"
+    //% subcategory="Add on pack"
+    //% group="Color Sensor"
+    export function read(channel: Channel): number {
+        let v = 0
+        switch (channel) {
+            case Channel.Red:
+                v = readRedRaw()
+                break
+            case Channel.Green:
+                v = readGreenRaw()
+                break
+            case Channel.Blue:
+                v = readBlueRaw()
+                break
+        }
+        return Math.round(Math.map(v, 0, 65535, 0, 255))
+    }
+}
