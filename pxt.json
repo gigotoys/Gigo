@@ -1,25 +1,11 @@
 {
-    "name": "Gigo",
-    "version": "0.0.0",
-    "description": "智高方塊",
+    "name": "bltcs3472",
+    "description": "BL-MZ-PBS06212D-010X Color Sensor for micro:bit",
     "dependencies": {
-        "core": "*",
-        "radio": "*",
-        "microphone": "*"
+        "core": "*"
     },
     "files": [
-        "README.md",
-        "main.ts",
-         "enums.d.ts"
-
+        "bltcs3472.ts"
     ],
-    "testFiles": [
-        
-    ],
-    "public": true,
-    "supportedTargets": [
-        "microbit"
-    ],
-    "preferredEditor": "blocksprj",
-    "license": "MIT"
+    "public": true
 }
