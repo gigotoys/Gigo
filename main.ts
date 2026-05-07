@@ -968,17 +968,26 @@ namespace RoboticsWorkshop {
  //          Joystick        //
  ////////////////////////////////
 
-    export enum Dir {
-        Up,
-        Down,
-        Left,
-        Right,
-        Center,
-        UpLeft,
-        UpRight,
-        DownLeft,
-        DownRight
-    }
+  eexport enum Dir {
+    //% block="up"
+    Up = 0,
+    //% block="down"
+    Down = 1,
+    //% block="left"
+    Left = 2,
+    //% block="right"
+    Right = 3,
+    //% block="center"
+    Center = 4,
+    //% block="up left"
+    UpLeft = 5,
+    //% block="up right"
+    UpRight = 6,
+    //% block="down left"
+    DownLeft = 7,
+    //% block="down right"
+    DownRight = 8
+}
 
     let baseP1 = 512
     let baseP2 = 512
@@ -1049,23 +1058,23 @@ namespace RoboticsWorkshop {
         return Dir.Center
     }
 
-    /**
-     * IF 判斷用
-     */
-    //% weight=98 blockGap=8
-    //% block="joystick direction is %d"
-    //% subcategory="Add on pack 2"
-    //% group="Joystick"
-
-    export function isDirection(d: Dir): boolean {
-        return getDirection() == d
-    }
-
+   /**
+ * IF 判斷用
+ */
+//% weight=98 blockGap=8
+//% block="joystick direction is %direction"
+//% direction.shadow="RoboticsWorkshop.Dir"
+//% subcategory="Add on pack 2"
+//% group="Joystick"
+export function isDirection(d: Dir): boolean {
+    return getDirection() == d
+}
     /**
      * 事件觸發
      */
     //% weight=97 blockGap=8
     //% block="when joystick direction is %direction"
+    //% direction.shadow="RoboticsWorkshop.Dir"
     //% subcategory="Add on pack 2"
     //% group="Joystick"
 
