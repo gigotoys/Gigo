@@ -35,7 +35,7 @@
     "RoboticsWorkshop.ReadColorEqual|block": "讀取紅 %WriteRed|和 綠 %WriteGreen|和 藍 %WriteBlue等於 %colorpart",
     "{id:group}Motor": "馬達",
     "{id:group}Ultrasonic Sensor": "超音波感測器",
-    "{id:group}Color Sensor": "顏色感測器"
+    "{id:group}Color Sensor": "顏色感測器",
     "{id:group}Joystick": "搖桿",
     "RoboticsWorkshop.Dir.Up|block": "上",
     "RoboticsWorkshop.Dir.Down|block": "下",
