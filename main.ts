@@ -477,7 +477,7 @@ namespace RoboticsWorkshop {
     //% block="initialize color sensor"
     //% subcategory="Add on pack 1" 
     //% group="Color Sensor"
-    export function initializeColorSensor(): void {
+    export function ColorSensorinit(): void {
         sensorReady = false
         sensorAddr = -1
         currentSensor = SensorType.Unknown
