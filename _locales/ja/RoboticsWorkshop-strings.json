@@ -50,9 +50,9 @@
     "RoboticsWorkshop.Dir.DownLeft|block": "左下",
     "RoboticsWorkshop.Dir.DownRight|block": "右下",
 
-    "RoboticsWorkshop.calibrateJoystick|block": "ジョイスティック中心を調整",
+    "RoboticsWorkshop.calibrate|block": "ジョイスティック中心を調整",
 
-    "RoboticsWorkshop.joystickDirectionIs|block": "ジョイスティック方向が %d",
+    "RoboticsWorkshop.isDirection|block": "ジョイスティック方向が %direction",
 
     "RoboticsWorkshop.onJoystick|block": "ジョイスティック方向が %direction のとき"
 }
