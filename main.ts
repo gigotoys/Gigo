@@ -968,7 +968,7 @@ namespace RoboticsWorkshop {
  //          Joystick        //
  ////////////////////////////////
 
-  eexport enum Dir {
+  export enum Dir {
     //% block="up"
     Up = 0,
     //% block="down"
