@@ -46,7 +46,7 @@
     "RoboticsWorkshop.Dir.UpRight|block": "右上",
     "RoboticsWorkshop.Dir.DownLeft|block": "左下",
     "RoboticsWorkshop.Dir.DownRight|block": "右下",
-    "RoboticsWorkshop.calibrateJoystick|block": "校正搖桿中心",
-    "RoboticsWorkshop.joystickDirectionIs|block": "搖桿方向是 %d",
+    "RoboticsWorkshop.calibrate|block": "校正搖桿中心",
+    "RoboticsWorkshop.isDirection|block": "搖桿方向是 %d",
     "RoboticsWorkshop.onJoystick|block": "當搖桿方向是 %direction"
 }
