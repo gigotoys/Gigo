@@ -35,13 +35,18 @@
     "RoboticsWorkshop.ReadColorEqual|block": "Ανάγνωση χρώματος ίσο με %colorpart",
     "{id:group}Joystick": "Χειριστήριο",
 
-    "RoboticsWorkshop.Dir.Up|block": "Πάνω",
-    "RoboticsWorkshop.Dir.Down|block": "Κάτω",
-    "RoboticsWorkshop.Dir.Left|block": "Αριστερά",
-    "RoboticsWorkshop.Dir.Right|block": "Δεξιά",
-    "RoboticsWorkshop.Dir.Center|block": "Κέντρο",
+    "RoboticsWorkshop.Dir.Up|block": "πάνω",
+"RoboticsWorkshop.Dir.Down|block": "κάτω",
+"RoboticsWorkshop.Dir.Left|block": "αριστερά",
+"RoboticsWorkshop.Dir.Right|block": "δεξιά",
+"RoboticsWorkshop.Dir.Center|block": "κέντρο",
+"RoboticsWorkshop.Dir.UpLeft|block": "πάνω αριστερά",
+"RoboticsWorkshop.Dir.UpRight|block": "πάνω δεξιά",
+"RoboticsWorkshop.Dir.DownLeft|block": "κάτω αριστερά",
+"RoboticsWorkshop.Dir.DownRight|block": "κάτω δεξιά",
 
-    "RoboticsWorkshop.calibrateJoystick|block": "βαθμονόμηση κέντρου joystick",
+"RoboticsWorkshop.calibrate|block": "βαθμονόμηση κέντρου joystick",
 
-    "RoboticsWorkshop.onJoystick|block": "όταν η κατεύθυνση joystick είναι %direction"
+"RoboticsWorkshop.isDirection|block": "η κατεύθυνση του joystick είναι %direction",
+"RoboticsWorkshop.onJoystick|block": "όταν η κατεύθυνση του joystick είναι %direction"
 }
